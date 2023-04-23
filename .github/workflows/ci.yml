@@ -63,31 +63,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --workspace --verbose
-
-  api-docs:
-    name: Publish API Docs to GitHub Pages
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: nightly
-          override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: doc
-          args: --workspace --verbose --locked
-      - name: Redirect top-level GitHub Pages
-        run: 'echo ''<meta http-equiv="refresh" content="0; url=${{ env.DEFAULT_CRATE_NAME }}/index.html" />'' > target/doc/index.html'
-        shell: bash
-      - name: Upload API Docs
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
-        if: github.ref == 'refs/heads/main'
-        with:
-          branch: gh-pages
-          folder: target/doc
-          single-commit: true
-

@@ -1,11 +1,11 @@
 [package]
-name = "wcgi-rust-template"
-authors = ["Wasmer Engineering Team <engineering@wasmer.io>"]
+name = "wcgi-access-counter"
+authors = ["Syuparn <s.hello.spagetti@gmail.com>"]
 edition = "2021"
-homepage = "https://github.com/wasmerio/wcgi-rust-template.git"
+homepage = "https://github.com/Syuparn/wcgi-access-counter"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/wasmerio/wcgi-rust-template.git"
+repository = "https://github.com/Syuparn/wcgi-access-counter.git"
 rust-version = "1.64.0"
 version = "0.1.0"
 

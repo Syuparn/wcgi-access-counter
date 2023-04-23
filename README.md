@@ -40,8 +40,15 @@ $ wasmer publish .
 You can also use `wasmer run-unstable` to test things locally.
 
 ```console
-$ wasmer run-unstable .
-INFO run: wasmer_wasix::runners::wcgi::runner: Starting the server address=127.0.0.1:8000 command_name="server"
+$ wasmer run-unstable --env SERVER_PROTOCOL=HTTP/1.1 --env SCRIPT_NAME=hello --env
+WCGI Server running at http://127.0.0.1:8000/
+```
+
+```console
+$ curl -XPOST localhost:8000
+Hello, World!
+$ curl -XPOST localhost:8000 -d "Mike"
+Hello, Mike!
 ```
 
 ## License
