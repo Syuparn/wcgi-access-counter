@@ -13,3 +13,6 @@ version = "0.1.0"
 
 [dependencies]
 cgi = "0.6.0"
+
+[dev-dependencies]
+tempfile = "3.5.0"

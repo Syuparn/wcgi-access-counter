@@ -40,7 +40,10 @@ $ wasmer publish .
 You can also use `wasmer run-unstable` to test things locally.
 
 ```console
-$ wasmer run-unstable --env SERVER_PROTOCOL=HTTP/1.1 --env SCRIPT_NAME=hello --env REQUEST_METHOD=POST .
+# create access counter file
+$ echo -n 0 > /tmp/counter.txt
+# run counter cgi
+$ wasmer run-unstable --env SERVER_PROTOCOL=HTTP/1.1 --env SCRIPT_NAME=hello --env REQUEST_METHOD=GET .
 WCGI Server running at http://127.0.0.1:8000/
 ```
 
@@ -78,3 +81,12 @@ do their best to avoid them, and welcome help in analysing and fixing them.
 [api-docs]: https://wasmerio.github.io/wcgi-rust-template
 [crev]: https://github.com/crev-dev/cargo-crev
 [install]: https://docs.wasmer.io/ecosystem/wasmer/getting-started
+
+#### Development
+
+Lint
+
+```console
+$ rustup component add clippy
+$ cargo clippy
+```
