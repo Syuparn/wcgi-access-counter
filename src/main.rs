@@ -7,7 +7,7 @@ fn main() {
 
 fn handler(_request: Request) -> Response {
     // TODO: handle error
-    let file_path = "/tmp/counter.txt";
+    let file_path = "/tmp/counter/counter.txt";
     let cnt_accesses = match counter::increment_counter(file_path) {
         Ok(cnt_access) => cnt_access,
         Err(e) => {

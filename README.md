@@ -41,9 +41,9 @@ You can also use `wasmer run-unstable` to test things locally.
 
 ```console
 # create access counter file
-$ echo -n 0 > /tmp/counter.txt
+$ echo -n 0 > counter/counter.txt
 # run counter cgi
-$ wasmer run-unstable --env SERVER_PROTOCOL=HTTP/1.1 --env SCRIPT_NAME=hello --env REQUEST_METHOD=GET .
+$ wasmer run-unstable --mapdir /tmp/counter:$(pwd)/counter --env SERVER_PROTOCOL=HTTP/1.1 --env SCRIPT_NAME=hello --env REQUEST_METHOD=GET .
 WCGI Server running at http://127.0.0.1:8000/
 ```
 
