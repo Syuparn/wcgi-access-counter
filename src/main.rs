@@ -8,13 +8,13 @@ fn main() {
 fn handler(_request: Request) -> Response {
     // TODO: handle error
     let file_path = "/tmp/counter/counter.txt";
-    let cnt_accesses = match counter::increment_counter(file_path) {
-        Ok(cnt_access) => cnt_access,
+    let pageviews = match counter::increment_counter(file_path) {
+        Ok(pageviews) => pageviews,
         Err(e) => {
             eprintln!("error: {e}");
             return cgi::string_response(StatusCode::INTERNAL_SERVER_ERROR, format!("{{\"error\": \"{e}\"}}"))
         }
     };
 
-    cgi::string_response(StatusCode::OK, format!("{{\"accesses\": {cnt_accesses}}}"))
+    cgi::string_response(StatusCode::OK, format!("{{\"pageviews\": {pageviews}}}"))
 }

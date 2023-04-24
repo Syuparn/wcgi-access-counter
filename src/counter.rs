@@ -2,10 +2,10 @@ use std::fs;
 
 pub fn increment_counter(file_path: &str) -> Result<i64, Box<dyn std::error::Error>> {
     let file_str = fs::read_to_string(file_path)?;
-    let mut cnt_access = file_str.parse::<i64>()?;
-    cnt_access += 1;
-    fs::write(file_path, format!("{cnt_access}"))?;
-    Ok(cnt_access)
+    let mut pageviews = file_str.parse::<i64>()?;
+    pageviews += 1;
+    fs::write(file_path, format!("{pageviews}"))?;
+    Ok(pageviews)
 }
 
 #[cfg(test)]
