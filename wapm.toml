@@ -7,12 +7,15 @@ readme = "README.md"
 repository = "https://github.com/Syuparn/wcgi-access-counter"
 
 [[module]]
-name = "server"
+name = "access-counter"
 source = "target/wasm32-wasi/release/wcgi-access-counter.wasm"
 abi = "wasi"
 
 [[command]]
-name = "server"
+name = "access-counter"
 runner = "https://webc.org/runner/wcgi"
 module = "wcgi"
 annotations = { wcgi = { dialect = "rfc-3875" } }
+
+[fs]
+"counter" = "counter"
