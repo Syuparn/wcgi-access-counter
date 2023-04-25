@@ -67,7 +67,7 @@ at your option.
 It is recommended to always use [`cargo crev`][crev] to verify the
 trustworthiness of each of your dependencies, including this one.
 
-#### Development
+## Development
 
 Lint
 
