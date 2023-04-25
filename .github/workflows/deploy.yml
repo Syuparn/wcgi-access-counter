@@ -23,7 +23,7 @@ jobs:
         echo -n 0 > counter/counter.txt
 
     - name: build wasm
-      run: RUSTFLAGS='-C +bulk-memory' cargo build --target=wasm32-wasi --release
+      run: cargo build --target=wasm32-wasi --release
 
     # deploy to wapm
     - name: install wapm cli
