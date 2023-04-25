@@ -10,7 +10,10 @@ fn main() {
 fn handler(request: Request) -> Response {
     // filter by path, otherwise request for `favicon.ico` also increases views
     if request.uri() != "pageviews" {
-        return cgi::string_response(StatusCode::NOT_FOUND, format!("{{\"error\": \"page not found\"}}"))
+        return cgi::string_response(
+            StatusCode::NOT_FOUND,
+            "{\"error\": \"page not found\"}".to_string(),
+        );
     }
 
     let pageviews = match counter::increment_counter(COUNTER_FILE_PATH) {
