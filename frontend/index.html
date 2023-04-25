@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アクセスカウンター</title>
+</head>
+<body>
+  <div class="main">
+    <div class="child"><h1 class="gradation text-wide">アクセスカウンター</h1></div>
+    <hr class="separator">
+    <div class="child">ようこそ。あなたは <span id="pageviews">???</span> 人目のお客様です。</div>
+  </div>
+  <style>
+    body {
+      margin: 0;
+      background: #0000AA;
+      color: #FFFF00;
+    }
+    h1 {
+      font-size: 4vw;
+    }
+    .main {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      justify-content: center;
+      background-size: cover;
+    }
+    .child {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+    .separator {
+      height: 0.2em;
+      margin-bottom: 2em;
+      background-color: #FFFFFF;
+      width: 100%;
+    }
+    .gradation {
+      display: inline-block;
+      background: linear-gradient(90deg, #FF0000, #FFFF00 30%, #00FF00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-wide {
+      transform: scale(1.7, 1);
+    }
+    #pageviews {
+      background: #000000;
+      color: #00FF00;
+      font-weight: bold;
+      padding: 0.5em;
+      letter-spacing: 0.2em;
+    }
+  </style>
+  <script>
+    (function(){
+      fetch("http://localhost:8000/pageviews")
+        .then(res => res.json())
+        .then(body => {
+          console.log(body);
+          const elem = document.getElementById("pageviews");
+          elem.textContent = body.pageviews;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })()
+  </script>
+</body>
+</html>
