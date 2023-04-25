@@ -1,6 +1,6 @@
 # WCGI Access Counter
 
-[![Continuous integration](https://github.com/wasmerio/wcgi-rust-template/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/wasmerio/wcgi-rust-template/actions)
+[![Continuous Integration](https://github.com/Syuparn/wcgi-access-counter/actions/workflows/ci.yml/badge.svg)](https://github.com/Syuparn/wcgi-access-counter/actions/workflows/ci.yml)
 
 ## About
 

@@ -32,4 +32,5 @@ jobs:
     - name: publish to wapm
       uses: wasmerio/wapm-publish@v1
       with:
-        token: ${{ secrets.WAPM_TOKEN }}
+        username: ${{ secrets.WAPM_USERNAME }}
+        password: ${{ secrets.WAPM_PASSWORD }}
