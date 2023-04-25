@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+
+    # build wasm by Rust
+    - uses: actions/checkout@v3
+    - uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: wasm32-wasi
+
+    - name: create counter file
+      run: |
+        mkdir -p counter
+        echo -n 0 > counter/counter.txt
+
+    - name: build wasm
+      run: cargo build --target=wasm32-wasi --release
+
+    # deploy to wapm
+    - name: install wapm cli
+      uses: wasmerio/setup-wasmer@v1
+
+    - name: publish to wapm
+      uses: wasmerio/wapm-publish@v1
+      with:
+        token: ${{ secrets.WAPM_TOKEN }}

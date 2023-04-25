@@ -34,7 +34,7 @@ $ rustup target add wasm32-wasi
 $ cargo build --target=wasm32-wasi --release
 
 # create counter file to record views
-$ echo -n 0 > counter/counter.txt
+$ mkdir -p counter && echo -n 0 > counter/counter.txt
 
 # run counter cgi
 $ wasmer run-unstable --mapdir /tmp/counter:$(pwd)/counter --env SERVER_PROTOCOL=HTTP/1.1 --env SCRIPT_NAME=pageviews --env REQUEST_METHOD=GET .
