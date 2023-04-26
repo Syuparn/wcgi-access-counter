@@ -26,6 +26,9 @@ jobs:
     - name: build wasm
       run: cargo build --target=wasm32-wasi --release
 
+    - name: check artifacts
+      run: ls target/wasm32-wasi/release
+
     # deploy to wapm
     - name: install wapm cli
       uses: wasmerio/setup-wasmer@v1
