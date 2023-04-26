@@ -13,8 +13,8 @@ abi = "wasi"
 
 [[command]]
 name = "access-counter"
-runner = "https://webc.org/runner/wcgi"
-module = "wcgi"
+runner = "wcgi"
+module = "access-counter"
 annotations = { wcgi = { dialect = "rfc-3875" } }
 
 [fs]
