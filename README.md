@@ -1,7 +1,7 @@
 # WCGI Access Counter
 
 [![Continuous Integration](https://github.com/Syuparn/wcgi-access-counter/actions/workflows/ci.yml/badge.svg)](https://github.com/Syuparn/wcgi-access-counter/actions/workflows/ci.yml)
-[![WAPM](https://img.shields.io/badge/WAPM-0.1.0-blueviolet)](https://wapm.io/Syuparn/wcgi-access-counter)
+[![WAPM](https://img.shields.io/badge/WAPM-0.1.2-blueviolet)](https://wapm.io/Syuparn/wcgi-access-counter)
 
 ## About
 
@@ -16,9 +16,9 @@ $ curl localhost:8000
 
 You can call it from your websites!
 
-![website screenshot](images/pages_jp.png)
+![website screenshot](https://raw.githubusercontent.com/Syuparn/wcgi-access-counter/main/images/pages_jp.png)
 
-![website screenshot](images/pages_en.png)
+![website screenshot](https://raw.githubusercontent.com/Syuparn/wcgi-access-counter/main/images/pages_en.png)
 
 ## Getting Started
 
