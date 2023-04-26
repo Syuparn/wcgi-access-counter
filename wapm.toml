@@ -19,3 +19,5 @@ annotations = { wcgi = { dialect = "rfc-3875" } }
 
 [fs]
 "counter" = "counter"
+"images" = "images"
+"frontend" = "frontend"
